@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/cars.css" />
+    <script src="js/cars.js"></script> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index page</title>
+  </head>
+  <body>
+    <h1>This is car page!</h1>
+    <form method="post" action="car">
+        <label for="cars">Choose a car:</label>
+        <select name="cars" id="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="BMW">BMW</option>
+          <option value="Audi">Audi</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div class="grid-container">
+        <% for(let i = 0; i < posts.length; i++) { %>
+            <div class="grid-item">
+                <div><%= posts[i].model %></div>
+                <img onmouseover="changeImage(this)" onmouseout="closeInterval(this)"  src=<%= posts[i].image_name %> width="200" height="133">
+                <div><%= posts[i].price %> <%= posts[i].denomination %></div>
+            </div>
+        <% } %>
+    </div>
+  </body>
+</html>
